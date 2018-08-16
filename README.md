@@ -1,5 +1,10 @@
 # appendmap
 
+[![Build status](https://img.shields.io/travis/koterpillar/appendmap.svg)](https://travis-ci.org/koterpillar/appendmap)
+[![Hackage](https://img.shields.io/hackage/v/appendmap.svg)](https://hackage.haskell.org/package/appendmap)
+[![Stackage LTS](https://www.stackage.org/package/appendmap/badge/lts)](https://www.stackage.org/lts/package/appendmap)
+[![Hackage dependencies](https://img.shields.io/hackage-deps/v/appendmap.svg)](https://packdeps.haskellers.com/feed?needle=appendmap)
+
 A `Data.Map` wrapper with a `Semigroup` and `Monoid` instances that delegate to
 the individual keys.
 
