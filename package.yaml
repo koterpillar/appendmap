@@ -10,7 +10,7 @@ extra-source-files:
 - README.md
 - ChangeLog.md
 
-synopsis:            Map with a Monoid instance delegating to that of the elements
+synopsis:            Map with a Semigroup and Monoid instances delegating to Semigroup of the elements
 category:            Data Structures
 
 description:         Please see the README on GitHub at <https://github.com/koterpillar/appendmap#readme>
