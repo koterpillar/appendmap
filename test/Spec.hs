@@ -1,6 +1,8 @@
 import qualified Data.Map as Map
 import Data.Map.Append
 
+import Data.Semigroup
+
 import Test.Hspec
 
 main :: IO ()

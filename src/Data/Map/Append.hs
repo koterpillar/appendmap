@@ -3,7 +3,7 @@ module Data.Map.Append where
 import qualified Data.Map as Map
 import Data.Map (Map)
 
-import Data.Monoid
+import Data.Monoid hiding ((<>))
 import Data.Semigroup
 
 import qualified Data.List.NonEmpty as NE
@@ -18,4 +18,5 @@ instance (Ord k, Semigroup v) => Semigroup (AppendMap k v) where
 
 instance (Ord k, Semigroup v) => Monoid (AppendMap k v) where
   mempty = AppendMap Map.empty
+  mappend = (<>)
   mconcat = AppendMap . Map.unionsWith (<>) . fmap unAppendMap
