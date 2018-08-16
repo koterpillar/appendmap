@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -ex
+
+stack --no-terminal $ARGS test --bench --no-run-benchmarks --haddock --no-haddock-deps
+
+set +ex

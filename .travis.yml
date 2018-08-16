@@ -1,0 +1,52 @@
+# Adapted from
+# https://docs.haskellstack.org/en/stable/travis_ci/
+
+sudo: false
+
+language: generic
+
+cache:
+  directories:
+  - $HOME/.ghc
+  - $HOME/.cabal
+  - $HOME/.stack
+
+matrix:
+  include:
+  - env: BUILD=stack ARGS=""
+    compiler: ": #stack default"
+    addons: {apt: {packages: [libgmp-dev]}}
+
+  - env: BUILD=stack ARGS="--resolver lts-9"
+    compiler: ": #stack LTS 9"
+    addons: {apt: {packages: [libgmp-dev]}}
+
+  - env: BUILD=stack ARGS="--resolver lts-10"
+    compiler: ": #stack LTS 10"
+    addons: {apt: {packages: [libgmp-dev]}}
+
+  - env: BUILD=stack ARGS="--resolver lts-11"
+    compiler: ": #stack LTS 11"
+    addons: {apt: {packages: [libgmp-dev]}}
+
+  - env: BUILD=stack ARGS="--resolver lts-12"
+    compiler: ": #stack LTS 12"
+    addons: {apt: {packages: [libgmp-dev]}}
+
+before_install: source ./travis/before_install
+
+install: source ./travis/install
+
+script: source ./travis/build
+
+deploy:
+  provider: script
+  script: ./travis/deploy
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
+    condition:
+      - '$BUILD = stack'
+      - '$ARGS = ""'
+      - '$TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+$'
