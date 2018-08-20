@@ -35,3 +35,10 @@ fromList [(1, "hello")]
 A different instance has been suggested for a long time
 ([1](https://mail.haskell.org/pipermail/libraries/2012-April/017743.html),
 [2](https://ghc.haskell.org/trac/ghc/ticket/1460)), but this is a breaking change and hasn't happened yet (as of 2018-08).
+
+## Development
+
+### Releasing
+
+* Install [bumpversion](https://pypi.org/project/bumpversion/): `pip install bumpversion`.
+* Run `./bumpversion patch|minor|major`.
