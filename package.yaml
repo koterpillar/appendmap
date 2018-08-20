@@ -1,19 +1,19 @@
-name:                appendmap
-version:             0.1.0
-github:              "koterpillar/appendmap"
-license:             BSD3
-author:              "Alexey Kotlyarov"
-maintainer:          "a@koterpillar.com"
-copyright:           "2018 Alexey Kotlyarov"
+name: appendmap
+version: '0.1.0'
+github: "koterpillar/appendmap"
+license: BSD3
+author: "Alexey Kotlyarov"
+maintainer: "a@koterpillar.com"
+copyright: "2018 Alexey Kotlyarov"
 
 extra-source-files:
 - README.md
 - ChangeLog.md
 
-synopsis:            Map with a Semigroup and Monoid instances delegating to Semigroup of the elements
-category:            Data Structures
+synopsis: Map with a Semigroup and Monoid instances delegating to Semigroup of the elements
+category: Data Structures
 
-description:         Please see the README on GitHub at <https://github.com/koterpillar/appendmap#readme>
+description: Please see the README on GitHub at <https://github.com/koterpillar/appendmap#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -24,8 +24,8 @@ library:
 
 tests:
   appendmap-test:
-    main:                Spec.hs
-    source-dirs:         test
+    main: Spec.hs
+    source-dirs: test
     ghc-options:
     - -threaded
     - -rtsopts
