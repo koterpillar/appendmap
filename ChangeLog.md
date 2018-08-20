@@ -2,6 +2,8 @@
 
 ## Unreleased changes
 
+## 0.1.3
+
 * Fix tests on older LTS
 
 ## 0.1.2
