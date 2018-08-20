@@ -42,5 +42,5 @@ Source code is formatted with `hindent` _then_ `stylish-haskell`.
 
 ### Releasing
 
-* Install [bumpversion](https://pypi.org/project/bumpversion/): `pip install bumpversion`.
-* Run `./bumpversion patch|minor|major`.
+* Run `./bumpversion patch|minor|major`. This will create a new version and push
+  it to the repository to be released.

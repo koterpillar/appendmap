@@ -49,3 +49,7 @@ $SEDI -r 's/version: "'$OLD_VERSION'"/version: "'$NEW_VERSION'"/g' package.yaml
 MESSAGE="Bump version: $OLD_VERSION → $NEW_VERSION"
 git commit -a -m "$MESSAGE"
 git tag -a -m "$MESSAGE" v$NEW_VERSION
+
+# push the tag then branch
+git push --tags
+git push
