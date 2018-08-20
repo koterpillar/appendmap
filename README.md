@@ -38,6 +38,8 @@ A different instance has been suggested for a long time
 
 ## Development
 
+Source code is formatted with `hindent` _then_ `stylish-haskell`.
+
 ### Releasing
 
 * Install [bumpversion](https://pypi.org/project/bumpversion/): `pip install bumpversion`.

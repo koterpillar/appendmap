@@ -1,10 +1,10 @@
 module Data.Map.Append where
 
-import qualified Data.Map as Map
-import Data.Map (Map)
+import           Data.Map           (Map)
+import qualified Data.Map           as Map
 
-import Data.Monoid hiding ((<>))
-import Data.Semigroup
+import           Data.Monoid        hiding ((<>))
+import           Data.Semigroup
 
 import qualified Data.List.NonEmpty as NE
 
