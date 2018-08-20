@@ -40,7 +40,7 @@ strict =
 appendMapSpec ::
      ( Show (map Int String)
      , Eq (map Int String)
-     , Monoid (map Int String)
+     , Semigroup (appendmap Int String)
      , Monoid (appendmap Int String)
      )
   => AppendMap appendmap map

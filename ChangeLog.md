@@ -2,6 +2,8 @@
 
 ## Unreleased changes
 
+* Fix tests on older LTS
+
 ## 0.1.2
 
 * Wrappers for lazy and strict versions of `Data.Map`.
