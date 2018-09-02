@@ -10,7 +10,7 @@ import qualified Data.List.NonEmpty as NE
 
 newtype AppendMap k v = AppendMap
   { unAppendMap :: Map k v
-  }
+  } deriving (Ord, Eq, Show)
 
 instance (Ord k, Semigroup v) => Semigroup (AppendMap k v) where
   AppendMap a <> AppendMap b = AppendMap $ Map.unionWith (<>) a b
