@@ -8,6 +8,8 @@ import qualified Data.Map.Lazy          as Lazy
 import qualified Data.Map.Append.Strict as Strict
 import qualified Data.Map.Strict        as Strict
 
+import qualified Data.Map.Counter       as Counter
+
 import           Data.Semigroup
 
 import           Test.Hspec
@@ -53,8 +55,19 @@ appendMapSpec AppendMap {..} = do
     unAppendMap (one <> two) `shouldBe`
       mapFromList [(1, "helloworld"), (2, "goodbye"), (3, "again")]
 
+counterSpec :: Spec
+counterSpec =
+  it "counts entries" $ do
+    let counted =
+          Counter.mkCounter "one" <> Counter.mkCounter "two" <>
+          Counter.mkCounter "two"
+    let result = Counter.getCounts counted
+    Strict.lookup "one" result `shouldBe` Just 1
+    Strict.lookup "two" result `shouldBe` Just 2
+
 main :: IO ()
 main =
   hspec $ do
     describe "Data.Map.Append.Lazy" $ appendMapSpec lazy
     describe "Data.Map.Append.Strict" $ appendMapSpec strict
+    describe "Data.Map.Counter" counterSpec
