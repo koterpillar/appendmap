@@ -1,6 +1,6 @@
-{-# LANGUAGE AllowAmbiguousTypes    #-}
-{-# LANGUAGE RankNTypes             #-}
-{-# LANGUAGE RecordWildCards        #-}
+{-# LANGUAGE AllowAmbiguousTypes #-}
+{-# LANGUAGE RankNTypes          #-}
+{-# LANGUAGE RecordWildCards     #-}
 
 import qualified Data.Map.Append.Lazy   as Lazy
 import qualified Data.Map.Lazy          as Lazy
@@ -46,8 +46,7 @@ appendMapSpec ::
   => AppendMap appendmap map
   -> Spec
 appendMapSpec AppendMap {..} = do
-  it "has empty element" $
-    unAppendMap mempty `shouldBe` mapEmpty
+  it "has empty element" $ unAppendMap mempty `shouldBe` mapEmpty
   it "combines elements" $ do
     let one = appendMap $ mapFromList [(1, "hello"), (2, "goodbye")]
     let two = appendMap $ mapFromList [(1, "world"), (3, "again")]
@@ -55,6 +54,7 @@ appendMapSpec AppendMap {..} = do
       mapFromList [(1, "helloworld"), (2, "goodbye"), (3, "again")]
 
 main :: IO ()
-main = hspec $ do
-  describe "Data.Map.Append.Lazy" $ appendMapSpec lazy
-  describe "Data.Map.Append.Strict" $ appendMapSpec strict
+main =
+  hspec $ do
+    describe "Data.Map.Append.Lazy" $ appendMapSpec lazy
+    describe "Data.Map.Append.Strict" $ appendMapSpec strict
