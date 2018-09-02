@@ -77,6 +77,12 @@ appendMapSpec AppendMap {..} = do
               | k <- Set.toList $ Set.unions $ map mapKeys maps
               ]
        in appended === individuallyAppended
+  it "is distributive over lookup" $
+    property $ \(m1' :: map Int String) (m2' :: map Int String) (k :: Int) ->
+      let lookup key = mapLookup key . unAppendMap
+          m1 = appendMap m1'
+          m2 = appendMap m2'
+       in lookup k (m1 <> m2) === lookup k m1 <> lookup k m2
 
 counterSpec :: Spec
 counterSpec =
