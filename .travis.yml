@@ -1,9 +1,10 @@
 # Adapted from
 # https://docs.haskellstack.org/en/stable/travis_ci/
 
-sudo: false
+sudo: required
+dist: trusty
 
-language: generic
+language: minimal
 
 cache:
   directories:
@@ -15,23 +16,18 @@ matrix:
   include:
   - env: BUILD=stack ARGS=""
     compiler: ": #stack default"
-    addons: {apt: {packages: [libgmp-dev]}}
 
   - env: BUILD=stack ARGS="--resolver lts-9"
     compiler: ": #stack LTS 9"
-    addons: {apt: {packages: [libgmp-dev]}}
 
   - env: BUILD=stack ARGS="--resolver lts-10"
     compiler: ": #stack LTS 10"
-    addons: {apt: {packages: [libgmp-dev]}}
 
   - env: BUILD=stack ARGS="--resolver lts-11"
     compiler: ": #stack LTS 11"
-    addons: {apt: {packages: [libgmp-dev]}}
 
   - env: BUILD=stack ARGS="--resolver lts-12"
     compiler: ": #stack LTS 12"
-    addons: {apt: {packages: [libgmp-dev]}}
 
 before_install: source ./travis/before_install
 
