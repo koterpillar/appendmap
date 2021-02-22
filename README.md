@@ -1,6 +1,6 @@
 # appendmap
 
-[![Build status](https://img.shields.io/travis/koterpillar/appendmap.svg)](https://travis-ci.org/koterpillar/appendmap)
+![Build status](https://github.com/koterpillar/appendmap/workflows/Build/badge.svg)
 [![Hackage](https://img.shields.io/hackage/v/appendmap.svg)](https://hackage.haskell.org/package/appendmap)
 [![Stackage LTS](https://www.stackage.org/package/appendmap/badge/lts)](https://www.stackage.org/lts/package/appendmap)
 [![Hackage dependencies](https://img.shields.io/hackage-deps/v/appendmap.svg)](https://packdeps.haskellers.com/feed?needle=appendmap)
