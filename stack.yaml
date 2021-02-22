@@ -1,3 +1,5 @@
-resolver: lts-12.6
+resolver: lts-17.4
 packages:
 - .
+# Work around https://github.com/commercialhaskell/stack/issues/5290
+save-hackage-creds: false
